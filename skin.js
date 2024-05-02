@@ -1,7 +1,7 @@
 // Garden Gnome Software - Skin
 // Pano2VR 7.0.10/20025
 // Filename: ????? ???-84.ggsk
-// Generated 2024-05-02T16:16:50
+// Generated 2024-05-02T17:00:10
 
 function pano2vrSkin(player,base) {
 	player.addVariable('vis_roomchoice', 2, false, { ignoreInState: 0  });
@@ -831,7 +831,7 @@ function pano2vrSkin(player,base) {
 		el.ggFilter[0] = "메인";
 		el.ggId="\uc9c0\ud558\uce35";
 		el.ggParameter={ rx:0,ry:0,a:0,sx:1,sy:1,def:'' };
-		el.ggVisible=false;
+		el.ggVisible=true;
 		el.className="ggskin ggskin_cloner ";
 		el.ggType='cloner';
 		hs ='';
@@ -840,7 +840,7 @@ function pano2vrSkin(player,base) {
 		hs+='overflow : visible;';
 		hs+='position : absolute;';
 		hs+='top : 0px;';
-		hs+='visibility : hidden;';
+		hs+='visibility : inherit;';
 		hs+='width : 150px;';
 		hs+='pointer-events:none;';
 		el.setAttribute('style',hs);
@@ -886,33 +886,7 @@ function pano2vrSkin(player,base) {
 			}
 		}
 		me.__53.logicBlock_size();
-		me.__53.logicBlock_visible = function() {
-			var newLogicStateVisible;
-			if (
-				((me.ggUserdata.tags.indexOf("\uc9c0\ud558") != -1))
-			)
-			{
-				newLogicStateVisible = 0;
-			}
-			else {
-				newLogicStateVisible = -1;
-			}
-			if (me.__53.ggCurrentLogicStateVisible != newLogicStateVisible) {
-				me.__53.ggCurrentLogicStateVisible = newLogicStateVisible;
-				me.__53.style.transition='width 0s, height 0s';
-				if (me.__53.ggCurrentLogicStateVisible == 0) {
-					me.__53.style.visibility=(Number(me.__53.style.opacity)>0||!me.__53.style.opacity)?'inherit':'hidden';
-					me.__53.ggVisible=true;
-				}
-				else {
-					me.__53.style.visibility="hidden";
-					me.__53.ggVisible=false;
-				}
-			}
-		}
-		me.__53.logicBlock_visible();
 		me.__53.ggCurrentLogicStateSize = -1;
-		me.__53.ggCurrentLogicStateVisible = -1;
 		me.__53.ggUpdateConditionNodeChange=function () {
 			var cnode=player.getCurrentNode();
 			for(var i=0; i<me.__53.childNodes.length; i++) {
@@ -5596,7 +5570,6 @@ function pano2vrSkin(player,base) {
 		me._scrollarea_1.logicBlock_position();
 		me._scrollarea_1.logicBlock_size();
 		me.__53.logicBlock_size();
-		me.__53.logicBlock_visible();
 		me.__19.logicBlock_position();
 		me.__19.logicBlock_scaling();
 		me._rectangle_2.logicBlock_size();
@@ -6267,7 +6240,6 @@ function pano2vrSkin(player,base) {
 				}
 			}
 			me.__52.logicBlock_position();
-			me.__53.logicBlock_visible();
 			me.__53.ggUpdateConditionNodeChange();
 			me._rectangle_2.logicBlock_size();
 			me.__49.logicBlock_visible();
